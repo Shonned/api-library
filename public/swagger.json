@@ -821,7 +821,13 @@
 				"tags": [
 					"Authors"
 				],
-				"security": [],
+				"security": [
+					{
+						"jwt": [
+							"author:read"
+						]
+					}
+				],
 				"parameters": []
 			},
 			"post": {
@@ -841,7 +847,13 @@
 				"tags": [
 					"Authors"
 				],
-				"security": [],
+				"security": [
+					{
+						"jwt": [
+							"author:write"
+						]
+					}
+				],
 				"parameters": [],
 				"requestBody": {
 					"required": true,

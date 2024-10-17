@@ -7,7 +7,7 @@ import {
   Path,
   Body,
   Tags,
-  Patch,
+  Patch, Security,
 } from "tsoa";
 import { authorService } from "../services/author.service";
 import {
@@ -22,6 +22,7 @@ import { BookOutputDTO } from "../dto/book.dto";
 export class AuthorController extends Controller {
   // Récupère tous les auteurs
   @Get("/")
+  @Security("jwt", ["author:read"])
   public async getAllAuthors(): Promise<AuthorOutputDTO[]> {
     return authorService.getAllAuthors();
   }
@@ -34,6 +35,7 @@ export class AuthorController extends Controller {
 
   // Crée un nouvel auteur
   @Post("/")
+  @Security("jwt", ["author:write"])
   public async createAuthor(
     @Body() requestBody: AuthorInputDTO,
   ): Promise<AuthorOutputDTO> {
