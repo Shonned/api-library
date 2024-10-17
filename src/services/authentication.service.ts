@@ -26,9 +26,15 @@ export class AuthenticationService {
         if (password === decodedPassword) {
 
             const role = user.username;
+            const ROLE_ADMIN = 'admin';
+            const ROLE_GERANT = 'gerant';
 
             const defaultScope: { [key: string]: boolean } = {
-                'book:read': true
+                'user:read': true,
+                'author:read': true,
+                'book:read': true,
+                'book:write': true,
+                'bookCollection:read': true,
             };
 
             const adminScope: { [key: string]: boolean } = {
@@ -50,10 +56,27 @@ export class AuthenticationService {
                 'bookCollection:update': true
             };
 
+            const gerantScope: { [key: string]: boolean } = {
+                'user:read': true,
+                'user:write': true,
+                'user:update': true,
+                'author:read': true,
+                'author:write': true,
+                'author:update': true,
+                'book:read': true,
+                'book:write': true,
+                'book:update': true,
+                'bookCollection:read': true,
+                'bookCollection:write': true,
+                'bookCollection:update': true
+            };
+
             let scope = { ...defaultScope };
 
-            if (role === 'admin') {
+            if (role === ROLE_ADMIN) {
                 scope = { ...scope, ...adminScope };
+            } else if (role === ROLE_GERANT) {
+                scope = { ...scope, ...gerantScope };
             }
 
             // Si l'utilisateur est authentifié, on génère un JWT
