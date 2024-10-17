@@ -25,6 +25,7 @@ export class UserService {
     username: string,
     password: string,
   ): Promise<UserOutputDTO> {
+    password = btoa(password);
     return UserMapper.toOutputDto(
       await User.create({ username: username, password: password }),
     );
@@ -56,6 +57,6 @@ export class UserService {
       notFound("User");
     }
   }
-}
+};
 
 export const userService = new UserService();
