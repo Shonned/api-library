@@ -32,15 +32,22 @@ export class AuthenticationService {
             };
 
             const adminScope: { [key: string]: boolean } = {
+                'user:read': true,
+                'user:write': true,
+                'user:delete': true,
+                'user:update': true,
                 'author:read': true,
                 'author:write': true,
                 'author:delete': true,
+                'author:update': true,
                 'book:read': true,
                 'book:write': true,
                 'book:delete': true,
+                'book:update': true,
                 'bookCollection:read': true,
                 'bookCollection:write': true,
-                'bookCollection:delete': true
+                'bookCollection:delete': true,
+                'bookCollection:update': true
             };
 
             let scope = { ...defaultScope };

@@ -29,6 +29,7 @@ export class AuthorController extends Controller {
 
   // Récupère un auteur par ID
   @Get("{id}")
+  @Security("jwt", ["author:read"])
   public async getAuthorById(@Path() id: number): Promise<AuthorOutputDTO> {
     return authorService.getAuthorById(id);
   }
@@ -45,12 +46,14 @@ export class AuthorController extends Controller {
 
   // Supprime un auteur par ID
   @Delete("{id}")
+  @Security("jwt", ["author:delete"])
   public async deleteAuthor(@Path() id: number): Promise<void> {
     await authorService.deleteAuthor(id);
   }
 
   // Met à jour un auteur par ID
   @Patch("{id}")
+  @Security("jwt", ["author:update"])
   public async updateAuthor(
     @Path() id: number,
     @Body() requestBody: AuthorInputPatchDTO,
@@ -60,6 +63,7 @@ export class AuthorController extends Controller {
   }
 
   @Get("{id}/books")
+  @Security("jwt", ["author:read"])
   public async getBooksByAuthorId(
     @Path() id: number,
   ): Promise<BookOutputDTO[]> {

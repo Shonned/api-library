@@ -318,7 +318,9 @@
 				],
 				"security": [
 					{
-						"jwt": []
+						"jwt": [
+							"user:read"
+						]
 					}
 				],
 				"parameters": []
@@ -342,7 +344,9 @@
 				],
 				"security": [
 					{
-						"jwt": []
+						"jwt": [
+							"user:write"
+						]
 					}
 				],
 				"parameters": [],
@@ -378,7 +382,9 @@
 				],
 				"security": [
 					{
-						"jwt": []
+						"jwt": [
+							"user:read"
+						]
 					}
 				],
 				"parameters": [
@@ -405,7 +411,9 @@
 				],
 				"security": [
 					{
-						"jwt": []
+						"jwt": [
+							"user:delete"
+						]
 					}
 				],
 				"parameters": [
@@ -439,7 +447,9 @@
 				],
 				"security": [
 					{
-						"jwt": []
+						"jwt": [
+							"user:update"
+						]
 					}
 				],
 				"parameters": [
@@ -486,7 +496,13 @@
 				"tags": [
 					"BookCollections"
 				],
-				"security": [],
+				"security": [
+					{
+						"jwt": [
+							"bookCollection:read"
+						]
+					}
+				],
 				"parameters": []
 			},
 			"post": {
@@ -506,7 +522,13 @@
 				"tags": [
 					"BookCollections"
 				],
-				"security": [],
+				"security": [
+					{
+						"jwt": [
+							"bookCollection:write"
+						]
+					}
+				],
 				"parameters": [],
 				"requestBody": {
 					"required": true,
@@ -538,7 +560,13 @@
 				"tags": [
 					"BookCollections"
 				],
-				"security": [],
+				"security": [
+					{
+						"jwt": [
+							"bookCollection:read"
+						]
+					}
+				],
 				"parameters": [
 					{
 						"in": "path",
@@ -568,7 +596,13 @@
 				"tags": [
 					"BookCollections"
 				],
-				"security": [],
+				"security": [
+					{
+						"jwt": [
+							"bookCollection:update"
+						]
+					}
+				],
 				"parameters": [
 					{
 						"in": "path",
@@ -601,7 +635,13 @@
 				"tags": [
 					"BookCollections"
 				],
-				"security": [],
+				"security": [
+					{
+						"jwt": [
+							"bookCollection:delete"
+						]
+					}
+				],
 				"parameters": [
 					{
 						"in": "path",
@@ -636,7 +676,13 @@
 				"tags": [
 					"Books"
 				],
-				"security": [],
+				"security": [
+					{
+						"jwt": [
+							"book:read"
+						]
+					}
+				],
 				"parameters": []
 			},
 			"post": {
@@ -656,7 +702,13 @@
 				"tags": [
 					"Books"
 				],
-				"security": [],
+				"security": [
+					{
+						"jwt": [
+							"book:write"
+						]
+					}
+				],
 				"parameters": [],
 				"requestBody": {
 					"required": true,
@@ -688,7 +740,13 @@
 				"tags": [
 					"Books"
 				],
-				"security": [],
+				"security": [
+					{
+						"jwt": [
+							"book:read"
+						]
+					}
+				],
 				"parameters": [
 					{
 						"in": "path",
@@ -718,7 +776,13 @@
 				"tags": [
 					"Books"
 				],
-				"security": [],
+				"security": [
+					{
+						"jwt": [
+							"book:update"
+						]
+					}
+				],
 				"parameters": [
 					{
 						"in": "path",
@@ -751,7 +815,13 @@
 				"tags": [
 					"Books"
 				],
-				"security": [],
+				"security": [
+					{
+						"jwt": [
+							"book:delete"
+						]
+					}
+				],
 				"parameters": [
 					{
 						"in": "path",
@@ -786,7 +856,13 @@
 				"tags": [
 					"Books"
 				],
-				"security": [],
+				"security": [
+					{
+						"jwt": [
+							"book:read"
+						]
+					}
+				],
 				"parameters": [
 					{
 						"in": "path",
@@ -885,7 +961,13 @@
 				"tags": [
 					"Authors"
 				],
-				"security": [],
+				"security": [
+					{
+						"jwt": [
+							"author:read"
+						]
+					}
+				],
 				"parameters": [
 					{
 						"in": "path",
@@ -908,7 +990,13 @@
 				"tags": [
 					"Authors"
 				],
-				"security": [],
+				"security": [
+					{
+						"jwt": [
+							"author:delete"
+						]
+					}
+				],
 				"parameters": [
 					{
 						"in": "path",
@@ -938,7 +1026,13 @@
 				"tags": [
 					"Authors"
 				],
-				"security": [],
+				"security": [
+					{
+						"jwt": [
+							"author:update"
+						]
+					}
+				],
 				"parameters": [
 					{
 						"in": "path",
@@ -983,7 +1077,13 @@
 				"tags": [
 					"Authors"
 				],
-				"security": [],
+				"security": [
+					{
+						"jwt": [
+							"author:read"
+						]
+					}
+				],
 				"parameters": [
 					{
 						"in": "path",
