@@ -9,7 +9,7 @@ export class AuthenticationController extends Controller {
     @Body() body: AuthenticationInputDTO
   ) {
     const { grant_type, username, password } = body;
-    if (grant_type !== password) {
+    if (grant_type !== "password") {
       let error = new Error("Invalid grant_type");
       (error as any).status = 400;
       throw error;
